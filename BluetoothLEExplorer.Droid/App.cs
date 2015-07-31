@@ -1,4 +1,5 @@
 using System;
+using Mono.Data.Sqlite;
 
 namespace BluetoothLEExplorer.Droid
 {
@@ -23,7 +24,12 @@ namespace BluetoothLEExplorer.Droid
 			_current = new App ();
 		}
 
-
+        public void testc()
+        {
+            // Create our connection
+            string folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var db =new SqliteConnection(System.IO.Path.Combine(folder, "notes.db"));
+        }
 	}
 }
 
